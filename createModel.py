@@ -7,8 +7,9 @@ dataDirectory = "JSON"
 
 depth = 2
 if len(sys.argv) > 2:
-    model = MarkovModel(int(sys.argv[2]))
-
+    depth = int(sys.argv[2])
+model = MarkovModel(depth)
+    
 for directory, _, files in os.walk(dataDirectory):
     for file in files:
         with open(os.path.join(directory, file), "r", encoding="utf-8") as fp:
