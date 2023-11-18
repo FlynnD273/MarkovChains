@@ -1,10 +1,13 @@
 import os
+import sys
 import json
 from markov import MarkovModel
 
 dataDirectory = "JSON"
 
-model = MarkovModel(2)
+depth = 2
+if len(sys.argv) > 2:
+    model = MarkovModel(int(sys.argv[2]))
 
 for directory, _, files in os.walk(dataDirectory):
     for file in files:
@@ -18,4 +21,4 @@ for directory, _, files in os.walk(dataDirectory):
                     _ = None
 
 model.normalise()
-print(model.generate("so apparently", 50))
+print(model.generate(sys.argv[1], 50))
