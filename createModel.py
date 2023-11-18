@@ -9,7 +9,7 @@ parser = argparse.ArgumentParser(
                     description='Generate text from a Markov chain model')
 
 parser.add_argument('-p', '--path', help='The directory in which the Discord JSON files reside', default='JSON')
-parser.add_argument('-d', '--depth', help='The number of words to use as context for the chain', default=2)
+parser.add_argument('-d', '--depth', help='The number of words to use as context for the chain', default=2, type=int)
 parser.add_argument('-o', '--output', help='The path to write the Markov model to', default='out.markov')
 parser.add_argument('-v', '--verbose', help='Verbose output', action='store_true')
 args = parser.parse_args()

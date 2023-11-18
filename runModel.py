@@ -8,7 +8,7 @@ parser = argparse.ArgumentParser(
 
 parser.add_argument('start', help='The starting prompt for generation')
 parser.add_argument('-p', '--path', help='The path to the Markov pickle file', default='out.markov')
-parser.add_argument('-c', '--count', help='Maximum number of words to generate', default=50)
+parser.add_argument('-c', '--count', help='Maximum number of words to generate', default=50, type=int)
 
 args = parser.parse_args()
 model: MarkovModel = MarkovModel(0)
